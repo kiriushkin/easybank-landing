@@ -1,0 +1,108 @@
+.intro {
+  //display: none;
+  position: relative;
+  background: url("../icons/bg-intro-desktop.svg") calc(100vw - 800px) center /
+      1400px no-repeat,
+    $secondary-color4;
+  &__img {
+    position: absolute;
+    width: 750px;
+    top: -140px;
+    right: -130px;
+  }
+  &__wrapper {
+    margin-top: 80px;
+    padding: 160px 0;
+    width: 460px;
+  }
+  &__title {
+    font-size: 5.4rem;
+    font-weight: 400;
+    line-height: 60px;
+    color: $secondary-color1;
+  }
+  &__text {
+    margin-top: 22px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: $secondary-color2;
+  }
+  &__btn {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .intro {
+    background: url("../icons/bg-intro-desktop.svg") calc(100vw - 650px) center /
+        1400px no-repeat,
+      $secondary-color4;
+    &__img {
+      position: absolute;
+      width: 650px;
+      top: -80px;
+      right: -150px;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .intro {
+    background: url("../icons/bg-intro-desktop.svg") calc(100vw - 500px) center /
+        1400px no-repeat,
+      $secondary-color4;
+    &__img {
+      position: absolute;
+      width: 600px;
+      top: -60px;
+      right: -150px;
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  .intro {
+    background: url("../icons/bg-intro-desktop.svg") calc(100vw - 450px) center /
+        1400px no-repeat,
+      $secondary-color4;
+    &__img {
+      position: absolute;
+      width: 550px;
+      top: -30px;
+      right: -180px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .intro {
+    background: url("../icons/bg-intro-mobile.svg") center calc(-100vw + 330px) /
+        100% no-repeat,
+      $secondary-color4;
+    &__img {
+      top: calc(-100vw + 270px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90vw;
+    }
+    &__wrapper {
+      padding: 330px 0 80px;
+      width: auto;
+    }
+    &__title {
+      text-align: center;
+      font-size: 4rem;
+      line-height: 48px;
+    }
+    &__text {
+      margin-top: 22px;
+      font-size: 1.55rem;
+      text-align: center;
+    }
+    &__btn {
+      display: block;
+      width: 170px;
+      margin: 30px auto 0;
+    }
+  }
+}

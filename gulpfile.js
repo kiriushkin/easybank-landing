@@ -29,6 +29,7 @@ gulp.task("styles", () => {
 });
 
 gulp.task("watch", () => {
+  gulp.watch("src/js/**/*.js", gulp.parallel("scripts"));
   gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel("styles"));
   gulp.watch("src/*.html").on("change", gulp.parallel("html"));
 });

@@ -1,0 +1,125 @@
+.header {
+  background: white;
+  &_fixed {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100vw;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  &__nav-item {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 5px;
+      width: 0;
+      background: linear-gradient(to right, $main-color1, $main-color2);
+      transition: 0.3s;
+    }
+    a {
+      font-size: 1.6rem;
+      font-weight: 400;
+      text-decoration: none;
+      color: $secondary-color2;
+      transition: 0.3s;
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+      a {
+        color: $secondary-color1;
+      }
+    }
+  }
+  &__burger {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    height: 80px;
+    &__btn {
+      display: none;
+    }
+    &__nav {
+      position: absolute;
+      z-index: -1000;
+      top: 80px;
+      left: 0;
+      height: calc(100vh - 80px);
+      width: 100vw;
+      background: linear-gradient(
+        hsla(233, 26%, 24%, 0.7),
+        hsl(255, 100%, 100%, 0)
+      );
+      background-position: 0 -100vh;
+      background-repeat: no-repeat;
+      transition: 0.5s;
+      &-list {
+        height: 50%;
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        top: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-150%);
+        opacity: 0;
+        border-radius: 7px;
+        background-color: white;
+        transition: 0.5s ease;
+      }
+      &-item a {
+        font-size: 1.8rem;
+        color: $secondary-color1;
+      }
+      &.active {
+        background: linear-gradient(
+          hsla(233, 26%, 24%, 0.7),
+          hsl(255, 100%, 100%, 0)
+        );
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        .header__nav-list {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+    &__burger {
+      display: block;
+      border: none;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      background: url("../icons/icon-hamburger.svg") center / contain no-repeat;
+      transform: rotate(0deg);
+      transition: 0.3s;
+      &.active {
+        background: url("../icons/icon-close.svg") center / contain no-repeat;
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
